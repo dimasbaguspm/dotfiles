@@ -9,12 +9,15 @@
 
     packages = [
       pkgs.git
-      pkgs.nodejs
-      pkgs.yazi
+      pkgs.nodejs_22
+      pkgs.corepack_22
       pkgs.lazygit
       pkgs.zsh
       pkgs.tree-sitter
       pkgs.cargo
+      pkgs.yazi
+
+      # font
       pkgs.nerd-fonts.caskaydia-cove
 
       # utilities

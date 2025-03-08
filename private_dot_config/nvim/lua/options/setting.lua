@@ -17,3 +17,5 @@ vim.filetype.add({
     ["http"] = "http",
   },
 })
+
+vim.opt.clipboard = "unnamedplus"

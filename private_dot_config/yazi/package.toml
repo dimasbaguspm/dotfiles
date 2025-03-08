@@ -8,6 +8,11 @@ use = "yazi-rs/plugins:git"
 rev = "3d0c7c6"
 hash = "771f18427fb75fb19990ce602bb322f4"
 
+[[plugin.deps]]
+use = "yazi-rs/plugins:smart-filter"
+rev = "2bf70d8"
+hash = "f0c4b41b5d19a3144958383333eff6e7"
+
 [[flavor.deps]]
 use = "dangooddd/kanagawa"
 rev = "31167ed"

@@ -13,6 +13,7 @@ return {
         { "<leader>s", group = "Search" },
         { "<leader>d", group = "Diagnostics" },
         { "<leader>t", group = "Terminal" },
+        { "<leader>R", group = "Rest Client" },
       },
     },
     keys = {

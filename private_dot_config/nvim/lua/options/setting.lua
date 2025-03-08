@@ -10,3 +10,10 @@ vim.g.mapleader = " "
 
 -- \ as <LocalLeader>.
 vim.g.maplocalleader = "\\"
+
+-- custom filetype
+vim.filetype.add({
+  extension = {
+    ["http"] = "http",
+  },
+})

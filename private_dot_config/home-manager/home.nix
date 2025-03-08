@@ -16,6 +16,11 @@
       pkgs.tree-sitter
       pkgs.cargo
       pkgs.nerd-fonts.caskaydia-cove
+
+      # utilities
+      pkgs.curl
+      pkgs.grpcurl
+      pkgs.jq
     ];
   };
 

@@ -75,8 +75,12 @@
   # by run `sudo chsh -s $(which zsh) $USER` in the terminal, then logout and login again
   programs.zsh = {
     enable = true;
+    initExtraFirst = ''
+      ZSH_DISABLE_COMPFIX=true
+    '';
     initExtra = ''
-      . "$HOME/.nix-profile/etc/profile.d/nix.sh"
+      # . "$HOME/.nix-profile/etc/profile.d/nix.sh"
+      . "/nix/var/nix/profiles/default/etc/profile.d/nix.sh"
       . "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
     '';
 

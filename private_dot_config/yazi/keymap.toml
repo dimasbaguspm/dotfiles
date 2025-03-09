@@ -2,3 +2,13 @@
 on   = "F"
 run  = "plugin smart-filter"
 desc = "Smart filter"
+
+[[input.prepend_keymap]]
+on   = "<Esc>"
+run  = "close"
+desc = "Cancel input"
+
+[[manager.prepend_keymap]]
+on   = "l"
+run  = "plugin smart-enter"
+desc = "Enter the child directory, or open the file"

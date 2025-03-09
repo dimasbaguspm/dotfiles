@@ -13,6 +13,16 @@ use = "yazi-rs/plugins:smart-filter"
 rev = "2bf70d8"
 hash = "f0c4b41b5d19a3144958383333eff6e7"
 
+[[plugin.deps]]
+use = "yazi-rs/plugins:smart-enter"
+rev = "2bf70d8"
+hash = "7918aab6a71caf31b58411f789195677"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:no-status"
+rev = "2bf70d8"
+hash = "513a23ac28e1eaa626f3a1bb6c8130d0"
+
 [[flavor.deps]]
 use = "dangooddd/kanagawa"
 rev = "31167ed"

@@ -17,6 +17,9 @@
       pkgs.cargo
       pkgs.yazi
 
+      # services
+      pkgs.devenv
+
       # font
       pkgs.nerd-fonts.caskaydia-cove
 

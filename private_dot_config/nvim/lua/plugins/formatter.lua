@@ -39,6 +39,7 @@ return {
         css = { "prettierd", "biome", stop_after_first = true },
         nix = { "alejandra", stop_after_first = true },
         markdown = { "prettierd", stop_after_first = true },
+        json = { "prettierd", stop_after_first = true },
       },
       format_on_save = {
         timeout_ms = 500,

@@ -1,20 +1,24 @@
 {pkgs, ...}: {
   home = {
-    username = ""; # NOTE: terminal username
-    homeDirectory = ""; # NOTE: the home directory, e.g. /home/username
+    username = builtins.getEnv "USER";
+    homeDirectory = builtins.getEnv "HOME";
     stateVersion = "22.05";
     shell = {
       enableZshIntegration = true;
     };
 
     packages = [
+      pkgs.zsh
+
       pkgs.git
+      pkgs.lazygit
+
+      # languages
       pkgs.nodejs_22
       pkgs.corepack_22
-      pkgs.lazygit
-      pkgs.zsh
-      pkgs.tree-sitter
       pkgs.cargo
+
+      # file explorer
       pkgs.yazi
 
       # services
@@ -22,6 +26,9 @@
 
       # font
       pkgs.nerd-fonts.caskaydia-cove
+
+      # editor
+      pkgs.tree-sitter
 
       # utilities
       pkgs.curl
@@ -33,6 +40,20 @@
   fonts = {
     fontconfig = {
       enable = true;
+    };
+  };
+
+  editorconfig = {
+    enable = true;
+    settings = {
+      "*" = {
+        charset = "utf-8";
+        end_of_line = "lf";
+        trim_trailing_whitespace = true;
+        insert_final_newline = true;
+        indent_style = "space";
+        indent_size = 2;
+      };
     };
   };
 
@@ -54,22 +75,19 @@
   # by run `sudo chsh -s $(which zsh) $USER` in the terminal, then logout and login again
   programs.zsh = {
     enable = true;
-    plugins = [
-      {
-        name = "zsh-autosuggestions";
-        src = pkgs.fetchFromGitHub {
-          owner = "zsh-users";
-          repo = "zsh-autosuggestions";
-          rev = "v0.4.0";
-          sha256 = "0z6i9wjjklb4lvr7zjhbphibsyx51psv50gm07mbb0kj9058j6kc";
-        };
-      }
-    ];
-
     initExtra = ''
       . "$HOME/.nix-profile/etc/profile.d/nix.sh"
       . "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
     '';
+
+    syntaxHighlighting.enable = true;
+    autosuggestion.enable = true;
+    autocd = true;
+
+    shellAliases = {
+      lsa = "ls -la";
+      ".." = "cd ..";
+    };
 
     oh-my-zsh = {
       enable = true;

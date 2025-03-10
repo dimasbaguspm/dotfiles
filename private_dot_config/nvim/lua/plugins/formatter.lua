@@ -6,7 +6,7 @@ return {
       "nvimtools/none-ls.nvim",
     },
     opts = {
-      ensure_installed = { "stylua", "rustfmt", "prettierd", "alejandra" },
+      ensure_installed = { "stylua", "rustfmt", "prettierd", "alejandra", "shfmt" },
     },
   },
   {
@@ -40,6 +40,7 @@ return {
         nix = { "alejandra", stop_after_first = true },
         markdown = { "prettierd", stop_after_first = true },
         json = { "prettierd", stop_after_first = true },
+        sh = { "shfmt", stop_after_first = true },
       },
       format_on_save = {
         timeout_ms = 500,

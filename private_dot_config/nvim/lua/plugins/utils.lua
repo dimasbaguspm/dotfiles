@@ -107,9 +107,14 @@ return {
     },
     keys = {
       {
-        "<leader>fn",
-        "<cmd>Telescope notify<cr>",
+        "<leader>nn",
+        "<cmd>Noice telescope<cr>",
         desc = "Find Notifications",
+      },
+      {
+        "<leader>nd",
+        "<cmd>Noice dismiss<cr>",
+        desc = "Dismiss Notifications",
       },
     },
   },

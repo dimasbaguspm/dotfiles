@@ -19,3 +19,6 @@ vim.filetype.add({
 })
 
 vim.opt.clipboard = "unnamedplus"
+
+vim.wo.wrap = true
+vim.wo.linebreak = true

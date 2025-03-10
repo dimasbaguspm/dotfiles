@@ -10,13 +10,18 @@
     packages = [
       pkgs.zsh
 
+      # git
       pkgs.git
       pkgs.lazygit
+      pkgs.gh # GitHub wrapper
 
       # languages
       pkgs.nodejs_22
       pkgs.corepack_22
+
+      # build tools
       pkgs.cargo
+      pkgs.zig
 
       # file explorer
       pkgs.yazi
@@ -34,7 +39,14 @@
       pkgs.curl
       pkgs.grpcurl
       pkgs.jq
+      pkgs.fzf
+      pkgs.fd
+      pkgs.ripgrep
     ];
+  };
+
+  xdg = {
+    enable = true;
   };
 
   fonts = {
@@ -67,8 +79,8 @@
 
   programs.git = {
     enable = true;
-    userEmail = ""; # NOTE: This is not the same as your email for git
-    userName = ""; # NOTE: This is not the same as your username for git
+    userEmail = builtins.getEnv "GIT_EMAIL";
+    userName = builtins.getEnv "GIT_USERNAME";
   };
 
   # If the installation smooth, then change the default shell to zsh
@@ -77,11 +89,18 @@
     enable = true;
     initExtraFirst = ''
       ZSH_DISABLE_COMPFIX=true
+
+      # apply the defined environment variables
+      ${builtins.readFile ./env.sh}
     '';
     initExtra = ''
-      # . "$HOME/.nix-profile/etc/profile.d/nix.sh"
-      . "/nix/var/nix/profiles/default/etc/profile.d/nix.sh"
       . "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
+
+      # nix handler for single user installation
+      # . "$HOME/.nix-profile/etc/profile.d/nix.sh"
+
+      # nix handler for multi user installation
+      . "/nix/var/nix/profiles/default/etc/profile.d/nix.sh"
     '';
 
     syntaxHighlighting.enable = true;
@@ -89,6 +108,9 @@
     autocd = true;
 
     shellAliases = {
+      g = "git";
+      lg = "lazygit";
+
       lsa = "ls -la";
       ".." = "cd ..";
     };
@@ -103,11 +125,4 @@
   };
 
   programs.home-manager.enable = true;
-
-  home.sessionVariables = {
-    EDITOR = "nvim";
-    CODE_STATS_USERNAME = ""; # NOTE: your username for code stats
-    CODE_STATS_BASE_URL = ""; # NOTE: your base url for code stats
-    CODE_STATS_API = ""; # NOTE: your api token for code stats
-  };
 }

@@ -14,6 +14,7 @@ return {
         { "<leader>d", group = "Diagnostics" },
         { "<leader>t", group = "Terminal" },
         { "<leader>R", group = "Rest Client" },
+        { "<leader>n", group = "Notifications" },
       },
     },
     keys = {

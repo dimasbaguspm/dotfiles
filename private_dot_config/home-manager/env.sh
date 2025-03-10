@@ -1,0 +1,8 @@
+export EDITOR=nvim
+
+export GIT_USERNAME=
+export GIT_EMAIL=
+
+export CODE_STATS_USERNAME=
+export CODE_STATS_BASE_URL=
+export CODE_STATS_API=

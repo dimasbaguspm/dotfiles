@@ -77,6 +77,12 @@
     defaultEditor = true;
   };
 
+  programs.direnv = {
+    enable = true;
+    enableZshIntegration = true;
+    nix-direnv.enable = true;
+  };
+
   programs.git = {
     enable = true;
     userEmail = builtins.getEnv "GIT_EMAIL";
@@ -101,6 +107,8 @@
 
       # nix handler for multi user installation
       . "/nix/var/nix/profiles/default/etc/profile.d/nix.sh"
+
+      # eval "$(direnv hook zsh)"
     '';
 
     syntaxHighlighting.enable = true;

@@ -9,6 +9,7 @@
 
     packages = [
       pkgs.zsh
+      pkgs.starship
 
       # git
       pkgs.git
@@ -36,6 +37,7 @@
       pkgs.tree-sitter
 
       # utilities
+      pkgs.bat
       pkgs.curl
       pkgs.grpcurl
       pkgs.jq
@@ -109,6 +111,7 @@
       # . "/nix/var/nix/profiles/default/etc/profile.d/nix.sh"
 
       # eval "$(direnv hook zsh)"
+      eval "$(starship init zsh)"
     '';
 
     syntaxHighlighting.enable = true;

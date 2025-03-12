@@ -106,7 +106,7 @@
       # . "$HOME/.nix-profile/etc/profile.d/nix.sh"
 
       # nix handler for multi user installation
-      . "/nix/var/nix/profiles/default/etc/profile.d/nix.sh"
+      # . "/nix/var/nix/profiles/default/etc/profile.d/nix.sh"
 
       # eval "$(direnv hook zsh)"
     '';
@@ -118,7 +118,7 @@
     shellAliases = {
       g = "git";
       lg = "lazygit";
-
+      e = "$EDITOR";
       lsa = "ls -la";
       ".." = "cd ..";
     };

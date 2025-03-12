@@ -10,8 +10,9 @@ Nix and Chezmoi are the primary tools used
 3. Execute `chezmoi init https://github.com/dimasbaguspm/dotfiles.git` and go to that source dir by using `chezmoi cd`
 4. Run `chezmoi apply` to apply the changes immediately, this will also duplicate the dotfiles to the appropriate locations
 5. In `.config/home-manager/env.sh` amend the pairs to suite with some credentials and settings
-6. Run `home-manager switch --impure` to apply the changes to your system
-7. Wait until the process finishes and relaunch the terminal
+6. In `.config/home-manager/setup-handler.sh`, select one of the profiles and uncomment the corresponding line
+7. Run `home-manager switch --impure` to apply the changes to your system
+8. Wait until the process finishes and relaunch the terminal
 
 ## Change shell to Oh My Zsh
 

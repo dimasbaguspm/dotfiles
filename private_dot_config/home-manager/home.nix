@@ -97,20 +97,10 @@
     enable = true;
     initExtraFirst = ''
       ZSH_DISABLE_COMPFIX=true
-
-      # apply the defined environment variables
       ${builtins.readFile ./env.sh}
     '';
     initExtra = ''
-      . "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
-
-      # nix handler for single user installation
-      # . "$HOME/.nix-profile/etc/profile.d/nix.sh"
-
-      # nix handler for multi user installation
-      # . "/nix/var/nix/profiles/default/etc/profile.d/nix.sh"
-
-      # eval "$(direnv hook zsh)"
+      ${builtins.readFile ./setup-handler.sh}
       eval "$(starship init zsh)"
     '';
 

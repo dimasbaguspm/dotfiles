@@ -1,51 +1,61 @@
 return {
   {
-    "akinsho/bufferline.nvim",
-    version = "*",
+    "romgrk/barbar.nvim",
+    dependencies = {
+      "lewis6991/gitsigns.nvim", -- OPTIONAL: for git status
+      "nvim-tree/nvim-web-devicons", -- OPTIONAL: for file icons
+    },
     lazy = false,
-    dependencies = "nvim-tree/nvim-web-devicons",
     opts = {
-      options = {
-        separator_style = "slant",
-        diagnostics = "nvim_lsp",
-        diagnostics_indicator = function(count, level)
-          local icon = level:match("error") and " " or " "
-          return " " .. icon .. count
-        end,
+      animation = true,
+      insert_at_start = true,
+      icons = {
+        pinned = { button = "", filename = true },
+        diagnostics = {
+          [vim.diagnostic.severity.ERROR] = { enabled = true, icon = "ﬀ" },
+          [vim.diagnostic.severity.WARN] = { enabled = true },
+          [vim.diagnostic.severity.INFO] = { enabled = true },
+          [vim.diagnostic.severity.HINT] = { enabled = true },
+        },
+        gitsigns = {
+          added = { enabled = true, icon = "+" },
+          changed = { enabled = true, icon = "~" },
+          deleted = { enabled = true, icon = "-" },
+        },
       },
     },
     keys = {
       {
         "<A-<>",
-        "<cmd>BufferLineCyclePrev<cr>",
+        "<cmd>BufferPrevious<cr>",
         desc = "Go to Prev Buffer",
         noremap = true,
         silent = true,
       },
       {
         "<A->>",
-        "<cmd>BufferLineCycleNext<cr>",
+        "<cmd>BufferNext<cr>",
         desc = "Go to Next Buffer",
         noremap = true,
         silent = true,
       },
       {
         "<A-.>",
-        "<cmd>BufferLineMoveNext<cr>",
+        "<cmd>BufferMoveNext<cr>",
         desc = "Move Buffer to Right",
         noremap = true,
         silent = true,
       },
       {
         "<A-,>",
-        "<cmd>BufferLineMovePrev<cr>",
+        "<cmd>BufferMovePrevious<cr>",
         desc = "Move Buffer to Left",
         noremap = true,
         silent = true,
       },
       {
         "<A-p>",
-        "<cmd>BufferLineTogglePin<cr>",
+        "<cmd>BufferPin<cr>",
         desc = "Pin Buffer",
         noremap = true,
         silent = true,
@@ -59,7 +69,7 @@ return {
       },
       {
         "<A-w>",
-        "<cmd>BufferLineCloseOthers<cr>",
+        "<cmd>BufferCloseAllButCurrentOrPinned<cr>",
         desc = "Wipe All Except Current",
         noremap = true,
         silent = true,

@@ -1,5 +1,4 @@
 return {
-
   {
     "kdheepak/lazygit.nvim",
     lazy = false,
@@ -37,7 +36,7 @@ return {
         desc = "Diff View",
       },
       {
-        "<leader>gD",
+        "<leader>gm",
         function()
           if next(require("diffview.lib").views) == nil then
             vim.cmd("DiffviewOpen origin/main...HEAD")

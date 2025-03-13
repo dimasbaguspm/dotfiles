@@ -1,5 +1,21 @@
 return {
   {
+    "tris203/precognition.nvim",
+    opts = {
+      showBlankVirtLine = false,
+      gutterHints = {
+        G = { text = "G", prio = 0 },
+        gg = { text = "gg", prio = 0 },
+        PrevParagraph = { text = "{", prio = 0 },
+        NextParagraph = { text = "}", prio = 0 },
+      },
+    },
+  },
+  {
+    "sphamba/smear-cursor.nvim",
+    opts = {},
+  },
+  {
     "catgoose/nvim-colorizer.lua",
     event = "BufReadPre",
     opts = {},

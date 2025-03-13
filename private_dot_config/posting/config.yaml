@@ -1,0 +1,8 @@
+theme: galaxy
+layout: horizontal
+animation: basic
+response:
+  prettify_json: true
+heading:
+  visible: true
+  show_host: true

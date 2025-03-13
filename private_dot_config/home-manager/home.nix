@@ -8,8 +8,10 @@
     };
 
     packages = [
+      # productivity
       pkgs.zsh
       pkgs.starship
+      pkgs.calcure
 
       # git
       pkgs.git
@@ -29,16 +31,19 @@
 
       # services
       pkgs.devenv
+      pkgs.posting
 
       # font
       pkgs.nerd-fonts.caskaydia-cove
 
       # editor
-      pkgs.tree-sitter
+      pkgs.harlequin
 
       # utilities
       pkgs.bat
+      pkgs.btop
       pkgs.curl
+      pkgs.tree-sitter
       pkgs.grpcurl
       pkgs.jq
       pkgs.fzf
@@ -110,8 +115,11 @@
 
     shellAliases = {
       g = "git";
-      lg = "lazygit";
       e = "$EDITOR";
+      lg = "lazygit";
+      db = "harlequin";
+      cal = "calcure";
+      post = "posting";
       lsa = "ls -la";
       ".." = "cd ..";
     };

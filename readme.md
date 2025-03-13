@@ -9,8 +9,8 @@ Nix and Chezmoi are the primary tools used
 2. Run `nix-env -i chezmoi` to install Chezmoi (if you don't have it already)
 3. Execute `chezmoi init https://github.com/dimasbaguspm/dotfiles.git` and go to that source dir by using `chezmoi cd`
 4. Run `chezmoi apply` to apply the changes immediately, this will also duplicate the dotfiles to the appropriate locations
-5. In `.config/home-manager/env.sh` amend the pairs to suite with some credentials and settings
-6. In `.config/home-manager/setup-handler.sh`, select one of the profiles and uncomment the corresponding line
+5. In `.config/home-manager` duplicate `env.example.sh` and `setup-handler.example.sh`
+6. Remove the `.example.` that placed within those files name and amend the settings
 7. Run `home-manager switch --impure` to apply the changes to your system
 8. Wait until the process finishes and relaunch the terminal
 
@@ -21,7 +21,7 @@ Nix and Chezmoi are the primary tools used
 
 ## Automatic Shell Activation
 
-Rely on [direnv](https://direnv.net/) [devenv](https://devenv.sh/) to have the dependencies reloaded automatically once you're in the project workspace
+Rely on [direnv](https://direnv.net/) and [devenv](https://devenv.sh/) to have the services dependencies that needed to be installed automatically when entering the project directory
 
 1. Navigate to the project directory
 2. Create `.envrc` in your project directory and fill it with command `echo 'eval "$(devenv direnvrc)"\n\nuse devenv' > .envrc && direnv allow`

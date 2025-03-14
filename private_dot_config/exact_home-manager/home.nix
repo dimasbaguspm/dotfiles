@@ -30,7 +30,6 @@
       pkgs.yazi
 
       # services
-      pkgs.devenv
       pkgs.posting
 
       # font
@@ -106,6 +105,7 @@
     '';
     initExtra = ''
       ${builtins.readFile ./setup-handler.sh}
+      eval "$(direnv hook zsh)"
       eval "$(starship init zsh)"
     '';
 
@@ -121,6 +121,7 @@
       cal = "calcure";
       post = "posting";
       lsa = "ls -la";
+      dev = "echo \"use nix\" > .envrc && direnv allow";
       ".." = "cd ..";
     };
 

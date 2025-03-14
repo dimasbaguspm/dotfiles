@@ -21,12 +21,11 @@ Nix and Chezmoi are the primary tools used
 
 ## Automatic Shell Activation
 
-Rely on [direnv](https://direnv.net/) and [devenv](https://devenv.sh/) to have the services dependencies that needed to be installed automatically when entering the project directory
+Rely on [direnv](https://direnv.net/) to have the services dependencies that needed to be installed automatically when entering the project directory
 
 1. Navigate to the project directory
 2. Create `.envrc` in your project directory and fill it with command `echo 'eval "$(devenv direnvrc)"\n\nuse devenv' > .envrc && direnv allow`
-3. Run `devenv init`
-4. Now the project should be automatically activated with the devenv shell whenever you enter the directory
+3. Now the project should be automatically activated with the devenv shell whenever you enter the directory
 
 ## Tips
 

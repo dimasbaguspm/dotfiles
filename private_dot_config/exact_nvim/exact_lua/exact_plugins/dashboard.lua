@@ -21,6 +21,7 @@ return {
         },
         shortcut = {
           { desc = "󰊳 Update", group = "@property", action = "Lazy update", key = "u" },
+          { desc = "Explorer", group = "@property", action = "Yazi", key = "e" },
         },
       },
       hide = {

@@ -31,6 +31,9 @@
 
       # services
       pkgs.posting
+      pkgs.docker_26
+      pkgs.docker-compose
+      pkgs.lazydocker
 
       # font
       pkgs.nerd-fonts.caskaydia-cove
@@ -117,6 +120,7 @@
       g = "git";
       e = "$EDITOR";
       lg = "lazygit";
+      ld = "lazydocker";
       db = "harlequin";
       cal = "calcure";
       post = "posting";

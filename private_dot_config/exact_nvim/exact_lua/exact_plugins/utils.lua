@@ -1,6 +1,7 @@
 return {
   {
     "tris203/precognition.nvim",
+    enabled = false,
     opts = {
       showBlankVirtLine = false,
       gutterHints = {
@@ -13,6 +14,7 @@ return {
   },
   {
     "sphamba/smear-cursor.nvim",
+    enabled = false,
     opts = {},
   },
   {

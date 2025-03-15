@@ -1,6 +1,10 @@
-theme: galaxy
-layout: horizontal
+theme: tokyo-night
+layout: vertical
 animation: basic
+
+focus:
+  on_startup: collection
+
 response:
   prettify_json: true
 heading:

@@ -11,12 +11,9 @@
       # productivity
       pkgs.zsh
       pkgs.starship
-      pkgs.calcure
 
       # git
-      pkgs.git
       pkgs.lazygit
-      pkgs.gh # GitHub wrapper
 
       # languages
       pkgs.nodejs_22
@@ -31,15 +28,11 @@
 
       # services
       pkgs.posting
-      pkgs.docker_26
-      pkgs.docker-compose
-      pkgs.lazydocker
+      pkgs.devenv
+      pkgs.rainfrog
 
       # font
       pkgs.nerd-fonts.caskaydia-cove
-
-      # editor
-      pkgs.harlequin
 
       # utilities
       pkgs.bat
@@ -98,6 +91,13 @@
     userName = builtins.getEnv "GIT_USERNAME";
   };
 
+  programs.gh = {
+    enable = true;
+    gitCredentialHelper = {
+      enable = true;
+    };
+  };
+
   # If the installation smooth, then change the default shell to zsh
   # by run `sudo chsh -s $(which zsh) $USER` in the terminal, then logout and login again
   programs.zsh = {
@@ -120,7 +120,7 @@
       g = "git";
       e = "$EDITOR";
       lg = "lazygit";
-      ld = "lazydocker";
+      yz = "yazi";
       db = "harlequin";
       cal = "calcure";
       post = "posting";

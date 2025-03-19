@@ -1,4 +1,11 @@
 {pkgs, ...}: {
+  nix = {
+    package = pkgs.nix;
+    settings = {
+      experimental-features = ["nix-command" "flakes"];
+    };
+  };
+
   home = {
     username = builtins.getEnv "USER";
     homeDirectory = builtins.getEnv "HOME";

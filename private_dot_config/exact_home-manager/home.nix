@@ -77,6 +77,9 @@
       };
     };
   };
+  programs.zoxide = {
+    enable = true;
+  };
 
   programs.neovim = {
     enable = true;
@@ -117,6 +120,7 @@
       ${builtins.readFile ./setup-handler.sh}
       eval "$(direnv hook zsh)"
       eval "$(starship init zsh)"
+      eval "$(zoxide init zsh)"
     '';
 
     syntaxHighlighting.enable = true;

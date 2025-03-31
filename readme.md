@@ -1,3 +1,5 @@
+Caution: this project is not maintained anymore, please refer to my [NixOS config](https://github.com/dimasbaguspm/nixos-beauty)
+
 # dotfiles
 
 This directory contains the dotfiles for Dimas' computer, generally it's a collection of configuration files for various programs and utilities.
